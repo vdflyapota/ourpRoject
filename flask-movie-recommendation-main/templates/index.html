@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CB Movie Recommender</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poppins:300,500&amp;display=swap'>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/3658/3658993.png">
+  <style>
+    :root {
+      --primary-color: #ff206e;
+      --secondary-color: #ff206e;
+      --background-color: #f8f8f8;
+      --text-color: #333;
+    }
+
+    html {
+      box-sizing: border-box;
+      height: 100vh;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      font-weight: 300;
+      font-size: 100%;
+      background-image: url('https://repository-images.githubusercontent.com/275336521/20d38e00-6634-11eb-9d1f-6a5232d0f84f');
+      background-size: cover;
+      background-repeat: no-repeat;
+      line-height: 1.5;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .movie {
+      margin: 2em;
+      padding: 2em;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgb(255 255 255 / 48%);
+    }
+
+    #movie_name {
+      width: 70%;
+      padding: 1em;
+      border-radius: 5px;
+      text-align: center;
+      border: 1px solid #ff206e;
+      margin-bottom: 1em;
+      font-size: 16px;
+      box-sizing: border-box;
+      color: black;
+    }
+
+    #submission_button {
+      width: 30%;
+      padding: 0.7em;
+      margin: 0.7em;
+      border-radius: 5px;
+      color: white;
+      background-color: var(--primary-color);
+      border-style: none;
+      cursor: pointer;
+      font-size: 16px;
+      box-sizing: border-box;
+      background-color: #ff206e;
+      transition: background-color 0.3s ease;
+    }
+
+    #submission_button:hover {
+          color: black;
+          background-color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fff;
+
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 1em;
+
+    }
+     hr {
+            width: 30%;
+            margin: 5px auto;
+            border: 0.5px solid #ccc;
+        }
+
+  </style>
+</head>
+
+<body>
+
+  <h1>RecOn</h1>
+  <hr>
+  <h2>Movie Recommendation System</h2>
+  <div class="movie">
+    <form action="{{ url_for('main') }}" method="POST">
+      <input type="text" id="movie_name" name="movie_name" placeholder="Enter a full movie name" autocorrect="off" autocapitalize="off" required />
+      <input type="submit" id="submission_button" value="Submit" />
+    </form>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js'></script>
+  <script src='https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js'></script>
+
+</body>
+
+</html>
